@@ -1,7 +1,7 @@
 public class RomanNumerals {
 
   public static String toRoman(int n) {
-    if (n == 0) return null;
+    if (n == 0) return null;                // check for blank and return null per instructions.
     
     String s = "";
     
@@ -10,7 +10,7 @@ public class RomanNumerals {
     
     int i = 0;
    
-      for (int x = 0; x < 13; x++)
+      for (int x = 0; x < 13; x++)          // loop through each value pair and subtract out the base 10 value and add the roman numeral to the string s
       {
         if (n - baseTen[x] >= 0)
         {
@@ -29,12 +29,12 @@ public class RomanNumerals {
     
     int num = 0;
     
-    for (int i = 1; i < 13; i += 2)
+    for (int i = 1; i < 13; i += 2)                                 // loop over every other item to add values to num for the 2 letter numerals and pop them out.
     {
       num += (( romanNumeral.split(baseRom[i], -1).length ) - 1) * baseTen[i];
       romanNumeral = romanNumeral.replace(baseRom[i],"");
     }
-    for (int i = 0; i < 13; i += 2)
+    for (int i = 0; i < 13; i += 2)                                 // loop over every other item to add values to num for the 1 letter numerals.
     {
       num += (( romanNumeral.split(baseRom[i], -1).length ) - 1) * baseTen[i];
     }
